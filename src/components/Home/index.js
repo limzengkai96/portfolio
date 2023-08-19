@@ -1,7 +1,7 @@
 import './index.scss'
 import { Container, Row, Col } from "react-bootstrap";
 import { TypeAnimation } from 'react-type-animation';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 // import {fadeIn} from '../va'
 
 const Home = () => {
