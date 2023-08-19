@@ -1,0 +1,31 @@
+.banner{
+    padding: 50px;
+    font-size: 15px;
+    background-color: #0e212b;
+    color: aqua;
+    .align-items-center{
+        // text-align: center;
+        
+        .tagline{
+            font-size: 10px;
+            background: rgb(20, 14, 130);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            padding: 5px;
+            border-color: #7b2151;
+            border-width: 3px;
+        }
+        .Intro{
+            margin-top: 20px;
+            .text{
+                color: aqua;
+            }
+            p{
+                color: #daaa18;
+            }
+            span{
+                font-size: 30px;
+            }
+        }
+    }
+}
