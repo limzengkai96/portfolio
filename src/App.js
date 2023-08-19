@@ -8,16 +8,11 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Layout />}>
-        {/* <Route index element={<Home />}></Route> */}
-      </Route>
-    </Routes>
-    // <div>
-    //   <Layout />
-    //   <Home />
-    // </div>
-
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
