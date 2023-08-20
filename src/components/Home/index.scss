@@ -1,11 +1,14 @@
 .banner{
-    padding: 50px;
+    padding: 50px 30px;
     font-size: 30px;
-    background-color: #0e212b;
     color: aqua;
+    position: relative;
+    .container_color{
+        background-color: #0e212b;
+        padding: 30px;
+    }
     .align-items-center{
         // text-align: center;
-        
         .tagline{
             font-size: 30px;
             background: rgb(20, 14, 130);
@@ -24,10 +27,10 @@
                 color: #daaa18;
             }
             h1{
-                font-size: 60px;
+                font-size: 52px;
             }
             span{
-                font-size: 55px;
+                font-size: 45px;
             }
         }
     }

@@ -25,16 +25,25 @@ const Sidebar = () => {
                 <img src={LogoS} alt="logo" />
             </Link>
             <div className="nav-items">
-                <Link style={linkStyle}>
+                <Link to='/' style={linkStyle}>
                     <h1>Home</h1>
                 </Link>
                 <Link to="/about" style={linkStyle}>
                     <h1>About</h1>
                 </Link>
-                <h1>Education</h1>
-                <h1>Experience</h1>
-                <h1>Qualification</h1>
-                <h1>Project</h1>
+                <Link to="/education" style={linkStyle}>
+                    <h1>Education</h1>
+                </Link>
+                <Link to="/experience" style={linkStyle}>
+                    <h1>Experience</h1>
+                </Link>
+                <Link to="/qualification" style={linkStyle}>
+                    <h1>Qualification</h1>
+                </Link>
+                <Link to="/project" style={linkStyle}>
+                    <h1>Project</h1>      
+                </Link>
+
             </div>
             <div className="dropdown-btn" onClick={toggleDropdown}>
                 {show ? <HiX size={30}/> : <FaBars size={30}/>}

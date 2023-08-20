@@ -5,23 +5,28 @@ import {motion} from 'framer-motion'
 import { useState, useEffect } from 'react';
 import KaiImg from '../../assets/images/kai-image.png'
 import AnimatedLetters from '../AnimatedLetter';
+import About from '../../components/About';
+import Education from '../../components/Education';
+import Experience from '../../components/Experience';
+import Qualification from '../../components/Qualification';
+import Project from '../../components/Project';
 // import {fadeIn} from '../va'
 
 const Home = () => {
-    const [size, setSize] = useState(false);
+    const [size, setSize] = useState(true);
     const [letterClass, setLetterClass] = useState('text-animate');
     const nameArray = ['L','I','M',' ', 'Z', 'E', 'N','G',' ','K','A','I'];
-    const handleResize = () => {
-        if (window.innerWidth <= 740) {
-            setSize(true);
-        } else {
-            setSize(false);
-        }
-    };
-
-
-
+    
     useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 710) {
+                setSize(true);
+                console.log(size)
+            } else {
+                setSize(false);
+            }
+        };
+
         // Call handleResize initially and add event listener for resize
         handleResize();
         window.addEventListener('resize', handleResize);
@@ -45,7 +50,7 @@ const Home = () => {
 
     return ( 
         <div className="banner">
-            <Container>
+            <Container className='container_color'>
                 <Row className="align-items-center"> 
                     <Col xs={12} md={6} xl={7}>
                         <h1>
@@ -59,40 +64,39 @@ const Home = () => {
                             >Hello, I'm <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={15}/>
                             </motion.h1> <br />
                             <p>
-                            <span className='text'>I am a </span>
-                            <span> </span>
-                                {!size && <TypeAnimation 
-                                    sequence={[
-                                        // Same substring at the start will only be typed out once, initially
-                                        'Web developer',
-                                        1000, // wait 1s before replacing "Mice" with "Hamsters"
-                                        'Network Engineer',
-                                        1000,
-                                        'RF Engineer',
-                                        1000,
-                                    ]}
-                                    wrapper="span"
-                                    speed={10}
-                                    style={{ fontSize: '72px', display: 'inline-block'}}
-                                    repeat={Infinity}
-                                    />}
-                                {size &&
-                                    <TypeAnimation 
-                                    sequence={[
-                                        // Same substring at the start will only be typed out once, initially
-                                        'Web developer',
-                                        1000, // wait 1s before replacing "Mice" with "Hamsters"
-                                        'Network Engineer',
-                                        1000,
-                                        'RF Engineer',
-                                        1000,
-                                    ]}
-                                    wrapper="span"
-                                    speed={10}
-                                    style={{ fontSize: '42px', display: 'inline-block'}}
-                                    repeat={Infinity}
+                                <span className='text'>I am a </span>
+                                { console.log(size)}
+                                {!size ? (
+                                    <TypeAnimation
+                                        sequence={[
+                                            'Web developer',
+                                            1000,
+                                            'Network Engineer',
+                                            1000,
+                                            'RF Engineer',
+                                            1000,
+                                        ]}
+                                        wrapper="span"
+                                        speed={10}
+                                        style={{ fontSize: '72px', display: 'inline-block' }}
+                                        repeat={Infinity}
                                     />
-                                }
+                                ) : (
+                                    <TypeAnimation
+                                        sequence={[
+                                            'Web developer',
+                                            1000,
+                                            'Network Engineer',
+                                            1000,
+                                            'RF Engineer',
+                                            1000,
+                                        ]}
+                                        wrapper="span"
+                                        speed={10}
+                                        style={{ fontSize: '42px', display: 'inline-block' }}
+                                        repeat={Infinity}
+                                    />
+                                )}
                             </p>
 
                         </div>
@@ -108,6 +112,12 @@ const Home = () => {
 
                     </Col>
                 </Row>
+                <button className='bg-gray-900 font-semibold text-yellow-500 p-4 mr-6 my-7 border border-yellow-500 transition-colors duration-150 rounded-lg hover:bg-yellow-500 hover:text-gray-900'>
+                    Contact Me
+                </button>
+                <button className='bg-gray-900 font-semibold text-yellow-500 p-4 ml-6 border border-yellow-500 transition-colors duration-150 rounded-lg hover:bg-yellow-500 hover:text-gray-900'>
+                    My Resume
+                </button>
                 <Row className='description'>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio rerum officiis dicta quo, praesentium modi esse placeat eum aut, pariatur neque debitis rem! Laborum vero iure dolor quam porro quod?
@@ -118,6 +128,12 @@ const Home = () => {
                     </p>
                 </Row>
             </Container>
+
+            <About/>
+            <Education/>
+            <Experience/>
+            <Qualification/>
+            <Project/>
         </div>
 
     );
