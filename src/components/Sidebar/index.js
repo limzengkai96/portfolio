@@ -7,6 +7,11 @@ import { useState } from 'react';
 import { HiX} from 'react-icons/hi';
 import {FaBars} from 'react-icons/fa'
 
+
+const linkStyle = {
+  textDecoration: "none",
+};
+
 const Sidebar = () => {
     const [show, setShow] = useState(false);
 
@@ -20,10 +25,12 @@ const Sidebar = () => {
                 <img src={LogoS} alt="logo" />
             </Link>
             <div className="nav-items">
-                <Link>
+                <Link style={linkStyle}>
                     <h1>Home</h1>
                 </Link>
-
+                <Link to="/about" style={linkStyle}>
+                    <h1>About</h1>
+                </Link>
                 <h1>Education</h1>
                 <h1>Experience</h1>
                 <h1>Qualification</h1>
@@ -34,13 +41,13 @@ const Sidebar = () => {
             </div>
             {show && (
                 <ul className="dropdown-menu">
-                    <Link to={"/"}>
+                    <Link style={linkStyle} to={"/"}>
                         <DropdownItem text="Home" />
                     </Link>
-                    <Link>
+                    <Link style={linkStyle} >
                         <DropdownItem text="Education" />
                     </Link>
-                    <Link>
+                    <Link style={linkStyle} >
                         <DropdownItem text="Experience" />        
                     </Link>
                     <DropdownItem text="Qualification" />

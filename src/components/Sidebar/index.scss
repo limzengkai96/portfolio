@@ -76,7 +76,7 @@
         font-size: 20px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 740px) {
         .nav-bar {
             height: 60;
         }
@@ -92,10 +92,20 @@
         .dropdown-menu {
             display: block; /* Show the dropdown menu */
             margin: auto;
+            background: rgba(24, 24, 24, 0.8);
+
+            .dropdownItem{
+                &:hover {
+                    background-color: #333;
+                }
+            }
+
+
         }
     }
 
-    @media (max-width: 870px) {
+
+    @media (max-width: 1010px) {
         .nav-items {
             gap: 30px;
         }
